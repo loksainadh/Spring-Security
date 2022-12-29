@@ -89,7 +89,7 @@ public class AuthController {
     log.info("enter into authenticateEmployee");
     Authentication authentication = authenticationManager.authenticate(
             new UsernamePasswordAuthenticationToken(loginRequest.getEmployeeName(), loginRequest.getPassword()));
-    log.info("enter into authentication"+authentication);
+
     SecurityContextHolder.getContext().setAuthentication(authentication);
     log.info("security");
     String jwt = jwtUtils.generateJwtToken(authentication);
